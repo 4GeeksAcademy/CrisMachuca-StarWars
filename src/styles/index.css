@@ -1,3 +1,88 @@
 /* 
     General Styles
 */
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+
+.layout {
+  background-image: url("https://getwallpapers.com/wallpaper/full/a/0/0/30135.jpg");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  
+}
+
+
+.navbar {
+  background-color: transparent;
+  color: white;
+  font-size: 1.5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Ajusta el grosor del borde según lo necesites */
+  background-color: rgba(255, 255, 255, 0.5); /* Color del borde con transparencia */
+}
+
+.logo {
+  margin-left: 5em;
+}
+h2 {
+  font-family: 'Star Wars', sans-serif;
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
+  color: white;
+  font-family: 'Star Wars', sans-serif;
+}
+.content-wrapper {
+  display: flex;
+  
+}
+
+.scrolling-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .card {
+    width: 286px;
+    display: inline-block;
+    margin-right: 10px; /* Espacio entre las tarjetas */
+    background-color: #1D1E1F;
+    color: white;
+  }
+
+  ul, li {
+    list-style:none
+}
+.fa-heart {
+    font-size: 2em;
+    background-color: transparent;
+    border: 1px, solid yellow;
+}
+
+.buttons {
+  gap: 3em;
+}
+.card-group {
+  display: flex; 
+  justify-Content: center; 
+  flex-Wrap: nowrap; 
+  overflow-X: auto;
+}
+.card-header {
+  font-size: x-large;
+  font-family: monospace;
+}
+
+
