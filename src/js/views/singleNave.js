@@ -30,7 +30,7 @@ console.log(params)
                
             </div>
             <Link to="/">
-                <span className="btn btn-primary btn-lg" href="#" role="button">
+                <span className="btn btn-primary btn-lg mb-5" href="#" role="button">
                     Back home
                 </span>
             </Link>

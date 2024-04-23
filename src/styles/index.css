@@ -9,6 +9,7 @@
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
+  background-color: blue;
   
 }
 
@@ -33,7 +34,15 @@
 }
 
 .logo {
-  margin-left: 5em;
+  
+}
+.carousel-title {
+  font-family: 'Star Wars', sans-serif;
+  color: yellow;
+}
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+    display: none;
 }
 h2 {
   font-family: 'Star Wars', sans-serif;
@@ -70,7 +79,9 @@ a:link, a:visited, a:active {
     background-color: transparent;
     border: 1px, solid yellow;
 }
-
+a .dropdown-item {
+  color: black; 
+}
 .buttons {
   gap: 3em;
 }
