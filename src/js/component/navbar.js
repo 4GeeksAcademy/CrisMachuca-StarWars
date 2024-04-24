@@ -40,7 +40,7 @@ export const Navbar = () => {
                             <ul className={`dropdown-menu mt-2 bg-dark dropdown-menu-end ${store.favorites.length > 0 ? 'show' : ''}`} style={{ minWidth: "fit-content" }} aria-labelledby="navbarDropdown">
                                 {store.favorites.map((favorite, index) => (
                                     <li key={index} className="d-flex align-items-center justify-content-between">
-                                        <Link className="dropdown-item" to={"/favorite/" + index}>{favorite}</Link>
+                                        <Link className="dropdown-item" to={"/singleCharacter/" + index}>{favorite}</Link>
                                         <button className="btn btn-link" onClick={() => handleDeleteFavorite(index)}><i className="fas fa-trash"></i></button>
                                     </li>
                                 ))}

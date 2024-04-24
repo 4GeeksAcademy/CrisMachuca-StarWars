@@ -25,7 +25,7 @@ const CarouselComponent = ({ items }) => {
     };
     
     return (
-        <div className="container border border-warning border-3  rounded p-3 mb-5" style={{ position: "relative"}}>
+        <div className="container border border-warning border-3 rounded pt-5 pb-3 mb-5" style={{ position: "relative"}}>
         <Carousel activeIndex={index} onSelect={handleSelect} interval={null} style={{ marginBottom: "50px", background: "black" }}  className="custom-carousel" >
             {items.map((item, idx) => (
                 <Carousel.Item key={idx}>
