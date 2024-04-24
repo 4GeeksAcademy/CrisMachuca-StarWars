@@ -44,6 +44,15 @@
 }
 
 .logo {
+  background-color: #0b0b0c5d;
+}
+.fa-trash {
+  color: #FFC107;
+}
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+
   
 }
 .carousel-title {

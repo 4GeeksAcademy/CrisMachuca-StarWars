@@ -19,6 +19,7 @@ export const Naves = (props) => {
                     src="https://i.blogs.es/e8942b/millennium-falcon/450_1000.jpg"
                     className="card-img-top"
                     alt="Character"
+                    
                 />
             ) : (
                 <img
@@ -26,6 +27,7 @@ export const Naves = (props) => {
                     className="card-img-top"
                     alt="Character"
                     onError={handleImageError} // Manejo de error al cargar la imagen
+                    
                 />
             )}
 
