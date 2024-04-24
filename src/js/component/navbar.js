@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-
+import { Link as ScrollLink } from "react-scroll";
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context);
@@ -13,7 +13,7 @@ export const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-brand text-center" href="#">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" height="180px" alt="" className="logo"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" height="180px" alt="" className="logo"/>
             </div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
                 <span className="navbar-toggler-icon" style={{color:"white"}}></span>
@@ -32,12 +32,12 @@ export const Navbar = () => {
                             <button className="btn btn-outline-warning" type="submit">Search</button>
                         </form>
                     </div>
-					<div className="favorites-dropdown">
+                    <div className="favorites-dropdown btn btn-outline-warning">
                         <li className="nav-item dropdown">
                             <Link to="/" className="nav-link" aria-haspopup="true" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                                 <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline">Favorites</span>
                             </Link>
-                            <ul className={`dropdown-menu bg-dark ${store.favorites.length > 0 ? 'show' : ''}`} aria-labelledby="navbarDropdown">
+                            <ul className={`dropdown-menu bg-dark dropdown-menu-end ${store.favorites.length > 0 ? 'show' : ''}`} style={{ minWidth: "fit-content" }} aria-labelledby="navbarDropdown">
                                 {store.favorites.map((favorite, index) => (
                                     <li key={index} className="d-flex align-items-center justify-content-between">
                                         <Link className="dropdown-item" to={"/favorite/" + index}>{favorite}</Link>
@@ -50,29 +50,28 @@ export const Navbar = () => {
                 </div>
                 <ul className="navbar-nav d-flex flex-row gap-3">
                     <li className="nav-item">
-                        <Link to="/" className="nav-link">
+                        <ScrollLink to="home" smooth={true} className="nav-link">
                             <i className="fa-solid fa-house"></i> <span className="ms-1 d-none d-sm-inline">Home</span>
-                        </Link> 
+                        </ScrollLink>
                     </li>
                     
                     <li className="nav-item">
-                        <Link to="/" className="nav-link">
+                        <ScrollLink to="planets" smooth={true} className="nav-link">
                             <i className="fa-solid fa-earth-americas"></i> <span className="ms-1 d-none d-sm-inline">Planets</span>
-                        </Link>
+                        </ScrollLink>
                     </li>
                     <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            <i className="fa-solid fa-shuttle-space"></i> <span className="ms-1 d-none d-sm-inline">Vehicles</span>
-                        </Link>
+                        <ScrollLink to="starships" smooth={true} className="nav-link">
+                            <i className="fa-solid fa-shuttle-space"></i> <span className="ms-1 d-none d-sm-inline">Starships</span>
+                        </ScrollLink>
                     </li>
                     <li className="nav-item">
-                        <Link to="/" className="nav-link">
+                        <ScrollLink to="characters" smooth={true} className="nav-link">
                             <i className="fa-solid fa-user-astronaut"></i> <span className="ms-1 d-none d-sm-inline">Characters</span>
-                        </Link>
+                        </ScrollLink>
                     </li>
                 </ul>
             </div>
         </nav>
-
     );
 };

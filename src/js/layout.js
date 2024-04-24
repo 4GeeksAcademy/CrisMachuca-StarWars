@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+
 import { SingleNave} from "./views/singleNave"
 import { SinglePlanet } from "./views/singlePlanet";
 import injectContext from "./store/appContext";

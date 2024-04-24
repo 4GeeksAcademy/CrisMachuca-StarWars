@@ -32,13 +32,23 @@
   height: 1px; /* Ajusta el grosor del borde según lo necesites */
   background-color: rgba(255, 255, 255, 0.5); /* Color del borde con transparencia */
 }
+.nav-link {
+  color: white;
+  font-size: 1.5em;
+  font-family: monospace;
+}
+.nav-link:hover {
+  cursor: pointer;
+  color: rgb(255, 251, 12);
+  
+}
 
 .logo {
   
 }
 .carousel-title {
   font-family: 'Star Wars', sans-serif;
-  color: yellow;
+  color: #FFE81F;
 }
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
