@@ -12,19 +12,23 @@ export const Navbar = () => {
 
     return (
         <nav className="navbar">
+         <div className="d-flex flex-column justify-content-center"> 
+            <div className="social d-flex gap-3">
+                        <a><i className="fa-brands fa-github"></i></a>
+                        <a><i className="fa-brands fa-linkedin"></i></a>
+                        <a><i className="fa-brands fa-github"></i></a>
+            </div>
             <div className="navbar-brand text-center" href="#">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" height="180px" alt="" className="logo"/>
             </div>
+            </div>  
+            <div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
                 <span className="navbar-toggler-icon" style={{color:"white"}}></span>
             </button>
             <div className="collapse navbar-collapse d-flex flex-column" id="opciones">
                 <div className="navsuperior container-fluid d-flex align-items-center justify-content-between">
-                    <div className="social d-flex gap-3">
-                        <a><i className="fa-brands fa-github"></i></a>
-                        <a><i className="fa-brands fa-linkedin"></i></a>
-                        <a><i className="fa-brands fa-github"></i></a>
-                    </div>
+                    
                     
                     <div className="search-form">
                         <form className="d-flex">
@@ -32,21 +36,21 @@ export const Navbar = () => {
                             <button className="btn btn-outline-warning" type="submit">Search</button>
                         </form>
                     </div>
-                    <div className="favorites-dropdown btn btn-outline-warning">
-                        <li className="nav-item dropdown">
-                            <Link to="/" className="nav-link" style={{fontSize: "18px"}} aria-haspopup="true" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline">Favorites</span>
-                            </Link>
-                            <ul className={`dropdown-menu mt-2 bg-dark dropdown-menu-end ${store.favorites.length > 0 ? 'show' : ''}`} style={{ minWidth: "fit-content" }} aria-labelledby="navbarDropdown">
-                                {store.favorites.map((favorite, index) => (
-                                    <li key={index} className="d-flex align-items-center justify-content-between">
-                                        <Link className="dropdown-item" to={"/singleCharacter/" + index}>{favorite}</Link>
-                                        <button className="btn btn-link" onClick={() => handleDeleteFavorite(index)}><i className="fas fa-trash"></i></button>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
+
+                    <div className="dropdown dropdown-center">
+                        <Link to="/" type="button" className="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline">Favorites {store.favorites.length}</span>
+                        </Link>
+                        <ul className={`dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark ${store.favorites.length > 0 ? 'show' : ''}`} style={{ minWidth: "fit-content" }} aria-labelledby="navbarDropdown" >
+                            {store.favorites.map((favorite, index) => (
+                                <li key={index} className="dropdown-item d-flex align-items-center justify-content-between">
+                                    <Link className="dropdown-item" to={"/singleCharacter/" + index}>{favorite}</Link>
+                                    <button className="btn btn-link" onClick={() => handleDeleteFavorite(index)}><i className="fas fa-trash"></i></button>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
+
                 </div>
                 <ul className="navbar-nav d-flex flex-row gap-3">
                     <li className="nav-item">
@@ -71,6 +75,7 @@ export const Navbar = () => {
                         </ScrollLink>
                     </li>
                 </ul>
+            </div>
             </div>
         </nav>
     );

@@ -21,6 +21,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  
 }
 
 .navbar::after {
@@ -32,16 +33,11 @@
   height: 1px; /* Ajusta el grosor del borde según lo necesites */
   background-color: rgba(255, 255, 255, 0.5); /* Color del borde con transparencia */
 }
-.nav-link {
-  color: white;
-  font-size: 1.5em;
-  font-family: monospace;
-}
-.nav-link:hover {
-  cursor: pointer;
-  color: rgb(255, 251, 12);
+.dropdown-menu {
+  color: rgb(0, 0, 0);
   
 }
+
 
 .logo {
   background-color: #0b0b0c5d;
@@ -52,9 +48,19 @@
 .dropdown-menu {
   position: absolute;
   right: 0;
-
-  
 }
+.nav-item {
+  cursor: pointer;
+  color: white;
+}
+a.nav-link{
+  color: white;
+  font-size: 1.2em;
+}
+a.nav-link:hover{
+  color: #FFE81F;
+}
+
 .carousel-title {
   font-family: 'Star Wars', sans-serif;
   color: #FFE81F;

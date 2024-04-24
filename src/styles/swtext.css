@@ -1,0 +1,91 @@
+.textoStarwars{
+
+    color: #ebe41c;
+    
+    font-size: 18px;
+    
+    width: 100%;
+    
+    -moz-transform-origin: 100px 200px;
+    
+    -moz-animation: movimientoTexto 10s linear infinite;
+    
+    -webkit-transform-origin: 100px 200px;
+    
+    -webkit-animation: movimientoTexto 10s linear infinite;
+    
+    -ms-transform-origin: 100px 200px;
+    
+    -ms-animation: movimientoTexto 10s linear infinite;
+    
+    transform-origin: 100px 200px;
+    
+    animation: movimientoTexto 10s linear infinite;
+    
+    }
+    
+    #contenedorTexto{
+    
+    background: #000;
+    
+    padding: 0 20px 0 20px;
+    
+    width: 300px;
+    
+    height: 200px;
+    
+    margin-left: auto;
+    
+    margin-right: auto;
+    
+    overflow: hidden;
+    
+    -moz-perspective: 500px;
+    
+    -moz-perspective-origin: 100px 200px;
+    
+    -webkit-perspective: 500px;
+    
+    -webkit-perspective-origin: 100px 200px;
+    
+    -ms-perspective: 500px;
+    
+    -ms-perspective-origin: 100px 200px;
+    
+    perspective: 500px;
+    
+    perspective-origin: 100px 200px;
+    
+    }
+    
+    @-moz-keyframes movimientoTexto {
+    
+    0% { -moz-transform: rotateX(45deg) translateY(300px); }
+    
+    100% { -moz-transform: rotateX(45deg) translateY(-400px); }
+    
+    }
+    
+    @-webkit-keyframes movimientoTexto {
+    
+    0% { -webkit-transform: rotateX(45deg) translateY(300px); }
+    
+    100% { -webkit-transform: rotateX(45deg) translateY(-400px); }
+    
+    }
+    
+    @-ms-keyframes movimientoTexto {
+    
+    0% { -ms-transform: rotateX(45deg) translateY(300px); }
+    
+    100% { -ms-transform: rotateX(45deg) translateY(-400px); }
+    
+    }
+    
+    @keyframes movimientoTexto {
+    
+    0% { transform: rotateX(45deg) translateY(300px); }
+    
+    100% { transform: rotateX(45deg) translateY(-400px); }
+    
+    }
