@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link as ScrollLink } from "react-scroll";
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+        actions.search(event.target.value);
+    };
 
     const handleDeleteFavorite = (index) => {
         actions.deleteFavorite(index); // Llama a la función para eliminar el favorito
@@ -30,12 +36,19 @@ export const Navbar = () => {
                 <div className="navsuperior container-fluid d-flex align-items-center justify-content-between">
                     
                     
-                    <div className="search-form">
-                        <form className="d-flex">
-                            <input className="form-control me-2 text-black" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-outline-warning" type="submit">Search</button>
-                        </form>
-                    </div>
+                <div className="search-form">
+                <form className="d-flex">
+                    <input
+                        className="form-control me-2 text-black"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                        value={searchTerm}
+                        onChange={handleSearch}
+                    />
+                    <button className="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+            </div>
 
                     <div className="dropdown dropdown-center">
                         <Link to="/" type="button" className="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">

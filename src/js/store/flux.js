@@ -51,6 +51,34 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const updatedFavorites = store.favorites.filter((_, idx) => idx !== index); // Filtra el elemento con el índice dado
                 setStore({ favorites: updatedFavorites });
             },
+            search: (searchTerm) => {
+                const store = getStore();
+            
+                let filteredCharacters = [];
+                let filteredNaves = [];
+                let filteredPlanets = [];
+            
+                if (searchTerm) {
+                    filteredCharacters = store.characters.filter(character =>
+                        character.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+            
+                    filteredNaves = store.naves.filter(nave =>
+                        nave.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+            
+                    filteredPlanets = store.planets.filter(planet =>
+                        planet.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                }
+            
+                setStore({
+                    filteredCharacters: filteredCharacters,
+                    filteredNaves: filteredNaves,
+                    filteredPlanets: filteredPlanets
+                });
+            },
+            
 			
             changeColor: (index, color) => {
                 const store = getStore();

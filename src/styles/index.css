@@ -60,7 +60,12 @@ a.nav-link{
 a.nav-link:hover{
   color: #FFE81F;
 }
-
+.background-carousel {
+  background-image: url("https://img.freepik.com/foto-gratis/fondo-metal-aranazos_1048-5777.jpg?t=st=1714073467~exp=1714077067~hmac=bf2ec0df5b0c5359e2178869223f73d66d0f186d27e6dbb32a335495e2d1d106&w=740");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
 .carousel-title {
   font-family: 'Star Wars', sans-serif;
   color: #FFE81F;

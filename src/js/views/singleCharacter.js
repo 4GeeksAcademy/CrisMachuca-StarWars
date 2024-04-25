@@ -6,9 +6,14 @@ import { Context } from "../store/appContext";
 export const SingleCharacter = props => {
     const { store, actions } = useContext(Context);
     const [character, setCharacter] = useState({});
+    const [characterImage, setCharacterImage] = useState("");
     const params = useParams();
 
     useEffect(() => {
+        fetchCharacterData();
+    }, []);
+
+    const fetchCharacterData = () => {
         fetch(`https://www.swapi.tech/api/people/${params.character_id}`)
             .then((response) => {
                 if (!response.ok) {
@@ -19,11 +24,14 @@ export const SingleCharacter = props => {
             .then((data) => {
                 console.log("Character:", data.result.properties);
                 setCharacter(data.result.properties);
+                const characterImage = `https://starwars-visualguide.com/assets/img/characters/${params.character_id}.jpg`;
+                setCharacterImage(characterImage);
             })
             .catch((error) => {
                 console.error('Error fetching character:', error);
+                // No hacemos nada si hay un error al cargar la imagen real
             });
-    }, [params.character_id]);
+    };
 
     return (
         <div className="container bg-light text-center mt-5">
@@ -31,8 +39,11 @@ export const SingleCharacter = props => {
                 <h1 className="display-4">{character.name}</h1>
                 <hr className="my-4" />
                 <div className="image">
-                    {character.uid && (
-                        <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} alt={character.name} />
+                    {characterImage && ( // Verificamos si hay una imagen real cargada
+                        <img
+                            src={characterImage}
+                            alt={character.name}
+                        />
                     )}
                 </div>
                 <div>
@@ -56,5 +67,3 @@ export const SingleCharacter = props => {
 SingleCharacter.propTypes = {
     match: PropTypes.object
 };
-
-export default SingleCharacter;

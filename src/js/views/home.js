@@ -3,14 +3,17 @@ import { Context } from "../store/appContext";
 import { Naves } from "../component/naves";
 import { Characters } from "../component/characters";
 import { Planets } from "../component/planets";
+import { Search } from "../component/search";
 import CarouselComponent from "../component/CarouselComponent";
 import "../../styles/index.css";
 
 export const Home = () => {
     const { store } = useContext(Context);
+    
 
     return (
         <div className="text-center mt-5">
+            <Search/>
             <div id="characters">
                 <h1 className="carousel-title">Characters</h1>
                 {store.characters && store.characters.length > 0 && (
