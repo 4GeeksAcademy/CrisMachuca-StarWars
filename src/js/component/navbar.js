@@ -36,7 +36,7 @@ export const Navbar = () => {
                 <div className="navsuperior container-fluid d-flex align-items-center justify-content-between">
                     
                     
-                <div className="search-form">
+                <div className="search-form d-flex bg-outline-warning bg-warning p-2 rounded-3">
                 <form className="d-flex">
                     <input
                         className="form-control me-2 text-black"
@@ -45,9 +45,11 @@ export const Navbar = () => {
                         aria-label="Search"
                         value={searchTerm}
                         onChange={handleSearch}
+                        style={{border: "2px solid black"}}
                     />
-                    <button className="btn btn-outline-warning" type="submit">Search</button>
+                    
                 </form>
+                <i className="fa-solid fa-magnifying-glass" style={{color: "black"}}></i>
             </div>
 
                     <div className="dropdown dropdown-center">
