@@ -7,7 +7,7 @@ export const SingleNave = props => {
     const { store, actions } = useContext(Context);
     const [starship, setStarship] = useState({});
     const [starshipImage, setStarshipImage] = useState(null); // Inicialmente establecemos la imagen en null
-    const [imageError, setImageError] = useState(false); // Estado para manejar errores de imagen
+    const [imageError, setImageError] = useState(false); 
     const params = useParams();
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export const SingleNave = props => {
             })
             .catch((error) => {
                 console.error("Error loading starship data:", error);
-                setImageError(true); // Establece el estado de error en verdadero
+                setImageError(true); 
             });
     };
 

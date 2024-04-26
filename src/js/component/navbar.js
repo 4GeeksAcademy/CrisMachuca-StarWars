@@ -13,7 +13,7 @@ export const Navbar = () => {
     };
 
     const handleDeleteFavorite = (index) => {
-        actions.deleteFavorite(index); // Llama a la función para eliminar el favorito
+        actions.deleteFavorite(index); 
     };
 
     return (

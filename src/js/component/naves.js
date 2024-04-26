@@ -5,11 +5,14 @@ import { Context } from "../store/appContext";
 export const Naves = (props) => {
 	const { store, actions } = useContext(Context);
 	const [imageError, setImageError] = useState(false); 
+    const [iconColor, setIconColor] = useState("white");
+
 	const handleAddToFavorites = () => {
-        actions.addToFavorites(props.name); // Agrega el nombre de la nave a la lista de favoritos
+        actions.addToFavorites(props.name); 
+        setIconColor("red");
     };
 	const handleImageError = () => {
-        setImageError(true); // Establece el estado de error en verdadero
+        setImageError(true); 
     };
 	return (
         
@@ -26,7 +29,7 @@ export const Naves = (props) => {
                     src={`https://starwars-visualguide.com/assets/img/starships/${props.uid}.jpg`}
                     className="card-img-top"
                     alt="Character"
-                    onError={handleImageError} // Manejo de error al cargar la imagen
+                    onError={handleImageError} 
                     
                 />
             )}
@@ -36,7 +39,7 @@ export const Naves = (props) => {
     		<p className="card-text">Nave info.</p>
 			<div className="buttons display-flex">
                 <Link className="more btn btn-primary m-3" to={"/singleNave/" + props.uid}><span>Learn more!</span></Link>
-                <button className="heart btn btn-warning" onClick={handleAddToFavorites}><i className="fa-regular fa-heart"></i></button>
+                <button className="heart btn" onClick={handleAddToFavorites}><i className="fa-solid fa-heart" style={{color:iconColor}}></i></button>
             </div>
 			
     		

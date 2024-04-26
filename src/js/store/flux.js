@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             deleteFavorite: (index) => {
                 const store = getStore();
-                const updatedFavorites = store.favorites.filter((_, idx) => idx !== index); // Filtra el elemento con el índice dado
+                const updatedFavorites = store.favorites.filter((_, idx) => idx !== index); 
                 setStore({ favorites: updatedFavorites });
             },
             search: (searchTerm) => {
