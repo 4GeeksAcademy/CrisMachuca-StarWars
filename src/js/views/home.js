@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Naves } from "../component/naves";
 import { Characters } from "../component/characters";
 import { Planets } from "../component/planets";
+import { Species } from "../component/species";
 import { Search } from "../component/search";
 import CarouselComponent from "../component/CarouselComponent";
 import "../../styles/index.css";
@@ -19,6 +20,15 @@ export const Home = () => {
                 {store.characters && store.characters.length > 0 && (
                     <CarouselComponent items={store.characters.map((item) => (
                         <Characters key={item.uid} uid={item.uid} name={item.name} />
+                    ))} />
+                )}
+            </div>
+
+            <div id="species">
+                <h1 className="carousel-title">Species</h1>
+                {store.species && store.species.length > 0 && (
+                    <CarouselComponent items={store.species.map((item) => (
+                        <Species key={item.uid} uid={item.uid} name={item.name} />
                     ))} />
                 )}
             </div>
@@ -40,6 +50,7 @@ export const Home = () => {
                     ))} />
                 )}
             </div>
+            
             
             
         </div>

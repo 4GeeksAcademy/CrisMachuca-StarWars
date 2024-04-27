@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             naves: [],
             characters: [], 
             planets: [],
-            films: [],
+            species: [],
             favorites: [],
         },
         actions: {
@@ -36,9 +36,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(response => response.json())
                     .then(data => setStore({ ...getStore(), planets: data.results })); 
 
-                fetch("https://www.swapi.tech/api/films")
+                fetch("https://www.swapi.tech/api/species")
                     .then(response => response.json())
-                    .then(data => setStore({ ...getStore(), films: data.results }));
+                    .then(data => setStore({ ...getStore(), species: data.results }));
             },
             
             addToFavorites: (item) => {
@@ -62,7 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 let filteredCharacters = [];
                 let filteredNaves = [];
                 let filteredPlanets = [];
-                let filteredFilms = [];
+                let filteredSpecies = [];
             
                 if (searchTerm) {
                     filteredCharacters = store.characters.filter(character =>
@@ -76,8 +76,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     filteredPlanets = store.planets.filter(planet =>
                         planet.name.toLowerCase().includes(searchTerm.toLowerCase())
                     );
-                    filteredFilms = store.films.filter(film =>
-                        film.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    filteredSpecies = store.species.filter(specie =>
+                        specie.name.toLowerCase().includes(searchTerm.toLowerCase())
                     );
                 }
             
@@ -85,7 +85,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     filteredCharacters: filteredCharacters,
                     filteredNaves: filteredNaves,
                     filteredPlanets: filteredPlanets,
-                    filteredFilms: filteredFilms
+                    filteredSpecies: filteredSpecies
                 });
             },
             

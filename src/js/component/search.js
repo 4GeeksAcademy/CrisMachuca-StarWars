@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Characters } from "../component/characters";
 import { Naves } from "../component/naves";
 import { Planets } from "../component/planets";
+import { Species } from "../component/species";
 
 export const Search = () => {
     const { store } = useContext(Context);
@@ -35,6 +36,16 @@ export const Search = () => {
                     <div className="d-flex flex-wrap">
                         {store.filteredPlanets.map(planet => (
                             <Planets key={planet.uid} uid={planet.uid} name={planet.name} />
+                        ))}
+                    </div>
+                </div>
+            )}
+            {store.filteredSpecies && store.filteredSpecies.length > 0 && (
+                <div>
+                    <h2>Species</h2>
+                    <div className="d-flex flex-wrap">
+                        {store.filteredSpecies.map(specie => (
+                            <Species key={specie.uid} uid={specie.uid} name={specie.name} />
                         ))}
                     </div>
                 </div>
