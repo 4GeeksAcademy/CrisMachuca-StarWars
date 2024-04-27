@@ -24,8 +24,10 @@ export const Navbar = () => {
                         <a><i className="fa-brands fa-linkedin"></i></a>
                         <a><i className="fa-brands fa-github"></i></a>
             </div>
-            <div className="navbar-brand text-center" href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" height="180px" alt="" className="logo"/>
+            <div className="navbar-brand text-center d-flex flex-column me-2 gap-1" href="#">
+                <h1 className="logo">STAR</h1>
+                <h1 className="logo">WARS</h1>
+                
             </div>
             </div>  
             <div>
@@ -36,10 +38,10 @@ export const Navbar = () => {
                 <div className="navsuperior container-fluid d-flex align-items-center justify-content-between">
                     
                     
-                <div className="search-form d-flex bg-outline-warning bg-warning p-2 rounded-3">
+                <div className="search-form d-flex bg-outline-warning bg-warning p-3 rounded-pill">
                 <form className="d-flex">
                     <input
-                        className="form-control me-2 text-black"
+                        className="form-control me-2 text-black rounded-pill"
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
@@ -68,25 +70,26 @@ export const Navbar = () => {
 
                 </div>
                 <ul className="navbar-nav d-flex flex-row gap-3">
-                    <li className="nav-item">
-                        <ScrollLink to="home" smooth={true} className="nav-link">
-                            <i className="fa-solid fa-house"></i> <span className="ms-1 d-none d-sm-inline">Home</span>
-                        </ScrollLink>
-                    </li>
+                    
                     
                     <li className="nav-item">
                         <ScrollLink to="planets" smooth={true} className="nav-link">
-                            <i className="fa-solid fa-earth-americas"></i> <span className="ms-1 d-none d-sm-inline">Planets</span>
+                            <i className="fa-solid fa-earth-americas"></i> <span className="ms-1 d-none d-sm-inline item-glow">Planets</span>
                         </ScrollLink>
                     </li>
                     <li className="nav-item">
                         <ScrollLink to="starships" smooth={true} className="nav-link">
-                            <i className="fa-solid fa-shuttle-space"></i> <span className="ms-1 d-none d-sm-inline">Starships</span>
+                            <i className="fa-solid fa-shuttle-space"></i> <span className="ms-1 d-none d-sm-inline item-glow">Starships</span>
                         </ScrollLink>
                     </li>
                     <li className="nav-item">
                         <ScrollLink to="characters" smooth={true} className="nav-link">
-                            <i className="fa-solid fa-user-astronaut"></i> <span className="ms-1 d-none d-sm-inline">Characters</span>
+                            <i className="fa-solid fa-user-astronaut"></i> <span className="ms-1 d-none d-sm-inline item-glow">Characters</span>
+                        </ScrollLink>
+                    </li>
+                    <li className="nav-item">
+                        <ScrollLink to="films" smooth={true} className="nav-link">
+                        <i className="fa-solid fa-film"></i><span className="ms-1 d-none d-sm-inline item-glow">Films</span>
                         </ScrollLink>
                     </li>
                 </ul>

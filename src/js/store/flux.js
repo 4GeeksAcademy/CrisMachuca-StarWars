@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             naves: [],
             characters: [], 
             planets: [],
+            films: [],
             favorites: [],
         },
         actions: {
@@ -34,6 +35,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                 fetch("https://www.swapi.tech/api/planets")
                     .then(response => response.json())
                     .then(data => setStore({ ...getStore(), planets: data.results })); 
+
+                fetch("https://www.swapi.tech/api/films")
+                    .then(response => response.json())
+                    .then(data => setStore({ ...getStore(), films: data.results }));
             },
             
             addToFavorites: (item) => {
@@ -57,6 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 let filteredCharacters = [];
                 let filteredNaves = [];
                 let filteredPlanets = [];
+                let filteredFilms = [];
             
                 if (searchTerm) {
                     filteredCharacters = store.characters.filter(character =>
@@ -70,12 +76,16 @@ const getState = ({ getStore, getActions, setStore }) => {
                     filteredPlanets = store.planets.filter(planet =>
                         planet.name.toLowerCase().includes(searchTerm.toLowerCase())
                     );
+                    filteredFilms = store.films.filter(film =>
+                        film.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
                 }
             
                 setStore({
                     filteredCharacters: filteredCharacters,
                     filteredNaves: filteredNaves,
-                    filteredPlanets: filteredPlanets
+                    filteredPlanets: filteredPlanets,
+                    filteredFilms: filteredFilms
                 });
             },
             

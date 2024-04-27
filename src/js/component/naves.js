@@ -38,7 +38,7 @@ export const Naves = (props) => {
     		<h5 className="card-title">{props.name}</h5>
     		<p className="card-text">Nave info.</p>
 			<div className="buttons display-flex">
-                <Link className="more btn btn-primary m-3" to={"/singleNave/" + props.uid}><span>Learn more!</span></Link>
+                <Link className="btn btn-warning m-3 rounded-pill" to={"/singleNave/" + props.uid}><span className="more">Learn more!</span></Link>
                 <button className="heart btn" onClick={handleAddToFavorites}><i className="fa-solid fa-heart" style={{color:iconColor}}></i></button>
             </div>
 			

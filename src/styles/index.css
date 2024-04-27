@@ -7,9 +7,8 @@
 .layout {
   background-image: url("https://getwallpapers.com/wallpaper/full/a/0/0/30135.jpg");
   background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-color: blue;
+  background-attachment: fixed;
+  
   
 }
 
@@ -33,6 +32,17 @@
   height: 1px; 
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+.search-form {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Borde blanco */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.search-form:hover {
+  transform: translateY(-3px); /* Efecto de levantamiento al hacer hover */
+}
+
 .dropdown-menu {
   color: rgb(0, 0, 0);
   
@@ -40,7 +50,15 @@
 
 
 .logo {
-  background-color: #0b0b0c5d;
+  font-family: 'Star Wars', sans-serif;
+  font-size: 4em;
+  line-height: 0.7em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  
+}
+.logo:first-child {
+  margin-top: 0.5em;
 }
 .fa-trash {
   color: #FFC107;
@@ -52,27 +70,77 @@
 .nav-item {
   cursor: pointer;
   color: white;
+  
 }
+.nav-link:hover {
+  color: white;
+  animation: glow .5s infinite alternate;
+}
+.nav-item:hover .item-glow {
+  color: white;
+  animation: glow .5s infinite alternate;
+}
+.navbar-brand {
+  
+}
+
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  100% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
 a.nav-link{
   color: white;
   font-size: 1.2em;
 }
-a.nav-link:hover{
-  color: #FFE81F;
-}
+
+
+
+
+
+
+
 .background-carousel {
-  background-image: url("https://img.freepik.com/foto-gratis/fondo-metal-aranazos_1048-5777.jpg?t=st=1714073467~exp=1714077067~hmac=bf2ec0df5b0c5359e2178869223f73d66d0f186d27e6dbb32a335495e2d1d106&w=740");
+  /*background-image: url("https://img.freepik.com/foto-gratis/fondo-metal-aranazos_1048-5777.jpg?t=st=1714073467~exp=1714077067~hmac=bf2ec0df5b0c5359e2178869223f73d66d0f186d27e6dbb32a335495e2d1d106&w=740");
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
+  */
+  border: none;
+  position: relative;
+  overflow: hidden;
 }
+.background-carousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(130deg, #509fc9, #e83b59);
+  opacity: 0.3; 
+  z-index: 1;
+}
+
 .carousel-title {
   font-family: 'Star Wars', sans-serif;
-  color: #FFE81F;
+  color: #FFF;
+  width: 100%;
+  background-color: #4a465850;
 }
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
     display: none;
+    
+}
+.more {
+  color: black;
 }
 h2 {
   font-family: 'Star Wars', sans-serif;
@@ -99,6 +167,7 @@ a:link, a:visited, a:active {
     margin-right: 10px; 
     background-color: #1D1E1F;
     color: white;
+    z-index: 2;
   }
 
   ul, li {

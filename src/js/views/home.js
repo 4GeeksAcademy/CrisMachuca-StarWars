@@ -23,6 +23,15 @@ export const Home = () => {
                 )}
             </div>
 
+            <div id="planets">
+                <h1 className="carousel-title">Planets</h1>
+                {store.planets && store.planets.length > 0 && (
+                    <CarouselComponent items={store.planets.map((item) => (
+                        <Planets key={item.uid} uid={item.uid} name={item.name} />
+                    ))} />
+                )}
+            </div>
+
             <div id="starships">
                 <h1 className="carousel-title">Starships</h1>
                 {store.naves && store.naves.length > 0 && (
@@ -32,14 +41,7 @@ export const Home = () => {
                 )}
             </div>
             
-            <div id="planets">
-                <h1 className="carousel-title">Planets</h1>
-                {store.planets && store.planets.length > 0 && (
-                    <CarouselComponent items={store.planets.map((item) => (
-                        <Planets key={item.uid} uid={item.uid} name={item.name} />
-                    ))} />
-                )}
-            </div>
+            
         </div>
     );
 };

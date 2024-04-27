@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Planets = (props) => {
+export const Films = (props) => {
     const { actions } = useContext(Context);
     const [imageError, setImageError] = useState(false); 
     const [iconColor, setIconColor] = useState("white");
