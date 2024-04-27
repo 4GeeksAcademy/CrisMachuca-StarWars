@@ -145,6 +145,9 @@ a.nav-link{
 h2 {
   font-family: 'Star Wars', sans-serif;
 }
+.text-back {
+  background-color: #0f151ba6;
+}
 
 a:link, a:visited, a:active {
   text-decoration:none;

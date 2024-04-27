@@ -88,7 +88,7 @@ export const Navbar = () => {
                         </ScrollLink>
                     </li>
                     <li className="nav-item">
-                        <ScrollLink to="films" smooth={true} className="nav-link">
+                        <ScrollLink to="species" smooth={true} className="nav-link">
                         <i className="fa-solid fa-film"></i><span className="ms-1 d-none d-sm-inline item-glow">Species</span>
                         </ScrollLink>
                     </li>

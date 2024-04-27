@@ -34,32 +34,37 @@ export const SingleSpecie = props => {
     };
 
     return (
-        <div className="container bg-light text-center mt-5">
-            <div className="jumbotron">
-                <h1 className="display-4">{specie.name}</h1>
-                <hr className="my-4" />
-                <div className="image">
-                    {specieImage && ( // Verificamos si hay una imagen real cargada
+        <div className="container text-center mt-5 text-white">
+
+<div className="jumbotron mb-3 d-flex" style={{minWidth: "360px"}}>
+  <div className="row g-0">
+    <div className="col-md-8">
+    {specieImage && ( // Verificamos si hay una imagen real cargada
                         <img
                             src={specieImage}
                             alt={specie.name}
+                            className="rounded-start"
                         />
                     )}
-                </div>
-                <div>
-                    <h2>Name: {specie.name}</h2>
+    </div>
+    <div className="col-md-4">
+      <div className="card-body text-back">
+      <h2>{specie.name}</h2>
                     <p>Classification: {specie.classification}</p>
                     <p>Language: {specie.language}</p>
                     <p>Designation: {specie.designation}</p>
                     <p>Average Lifespan: {specie.average_lifespan}</p>
                     <p>Average Height: {specie.average_height}</p>
-                </div>
-                <Link to="/">
+                    <Link to="/">
                     <span className="btn btn-primary btn-lg mb-5" href="#" role="button">
                         Back home
                     </span>
                 </Link>
-            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
     );
 };
