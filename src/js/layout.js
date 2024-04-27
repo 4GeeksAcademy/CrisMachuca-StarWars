@@ -12,6 +12,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { SingleCharacter } from "./views/singleCharacter";
+import { SingleSpecie } from "./views/singleSpecie";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +31,7 @@ const Layout = () => {
 						<Route path="/singleNave/:nave_id" element={<SingleNave />} />
 						<Route path="/singleCharacter/:character_id" element={<SingleCharacter />} />
 						<Route path="/singlePlanet/:planet_id" element={<SinglePlanet />} />
+						<Route path="/singleSpecie/:specie_id" element={<SingleSpecie />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

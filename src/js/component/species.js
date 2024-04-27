@@ -21,13 +21,13 @@ export const Species = (props) => {
                 <img
                     src="https://hips.hearstapps.com/hmg-prod/images/el-despertar-de-la-fuerza-1575448990.jpg?crop=1xw:1xh;center,top&resize=980:*"
                     className="card-img-top"
-                    alt="Character"
+                    alt="Specie"
                 />
             ) : (
                 <img
                     src={`https://starwars-visualguide.com/assets/img/species/${props.uid}.jpg`}
                     className="card-img-top"
-                    alt="Character"
+                    alt="Specie"
                     onError={handleImageError} 
                 />
             )}
@@ -40,7 +40,7 @@ export const Species = (props) => {
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text">Species info.</p>
                 <div className="buttons display-flex">
-                    <Link className="btn btn-warning m-3 rounded-pill" to={"/singlePlanet/" + props.uid}><span className="more">Learn more!</span></Link>
+                    <Link className="btn btn-warning m-3 rounded-pill" to={"/singleSpecie/" + props.uid}><span className="more">Learn more!</span></Link>
                     <button className="heart btn" onClick={handleAddToFavorites}><i className="fa-solid fa-heart" style={{color:iconColor}}></i></button>
                 </div>
             </div>
