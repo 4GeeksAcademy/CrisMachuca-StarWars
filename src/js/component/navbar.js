@@ -17,28 +17,27 @@ export const Navbar = () => {
     };
 
     return (
-        <nav className="navbar">
-         <div className="d-flex flex-column justify-content-center"> 
-            <div className="social d-flex gap-3">
-                        <a><i className="fa-brands fa-github"></i></a>
-                        <a><i className="fa-brands fa-linkedin"></i></a>
-                        <a><i className="fa-brands fa-github"></i></a>
+        <div>
+            <div className="social d-flex gap-3 p-3">
+                        <a href="https://github.com/CrisMachuca"><i className="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/cristina-machuca-mart%C3%ADnez-5636b2274/"><i className="fa-brands fa-linkedin"></i></a>
             </div>
-            <div className="navbar-brand text-center d-flex flex-column me-2 gap-1" href="#">
+        <nav className="navbar">
+          <Link to="/">
+            <div className="navbar-brand text-center d-flex flex-column  me-sm-0  gap-1" href="#">
                 <h1 className="logo">STAR</h1>
                 <h1 className="logo">WARS</h1>
-                
-            </div>
             </div>  
-            <div>
+          </Link>  
+            <div className="pb-3">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
                 <span className="navbar-toggler-icon" style={{color:"white"}}></span>
             </button>
             <div className="collapse navbar-collapse d-flex flex-column" id="opciones">
-                <div className="navsuperior container-fluid d-flex align-items-center justify-content-between">
+                <div className="navsuperior container-fluid d-flex gap-3 align-items-center justify-content-between mb-2">
                     
                     
-                <div className="search-form d-flex bg-outline-warning bg-warning p-3 rounded-pill">
+                <div className="search-form d-flex bg-outline-warning bg-warning p-2 rounded-pill">
                 <form className="d-flex">
                     <input
                         className="form-control me-2 text-black rounded-pill"
@@ -89,12 +88,13 @@ export const Navbar = () => {
                     </li>
                     <li className="nav-item">
                         <ScrollLink to="species" smooth={true} className="nav-link">
-                        <i className="fa-solid fa-film"></i><span className="ms-1 d-none d-sm-inline item-glow">Species</span>
+                        <i className="fa-solid fa-spaghetti-monster-flying"></i><span className="ms-1 d-none d-sm-inline item-glow">Species</span>
                         </ScrollLink>
                     </li>
                 </ul>
             </div>
             </div>
         </nav>
+        </div>
     );
 };

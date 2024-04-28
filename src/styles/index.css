@@ -34,6 +34,7 @@
 }
 
 .search-form {
+  max-width: 230px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca */
   border: 2px solid rgba(255, 255, 255, 0.3); /* Borde blanco */
   transition: transform 0.3s ease; /* Transición suave */
@@ -58,7 +59,7 @@
   
 }
 .logo:first-child {
-  margin-top: 0.5em;
+  margin-top: 0.1em;
 }
 .fa-trash {
   color: #FFC107;
@@ -80,9 +81,7 @@
   color: white;
   animation: glow .5s infinite alternate;
 }
-.navbar-brand {
-  
-}
+
 
 
 @keyframes glow {
@@ -100,11 +99,22 @@ a.nav-link{
   font-size: 1.2em;
 }
 
-
-
-
-
-
+.single-card {
+  border: 6px solid rgb(255, 190, 13);
+  box-shadow: 0 0 10px 4px rgba(255, 190, 13, 0.8), 0 0 20px 8px rgba(255, 190, 13, 0.6);
+}
+.image {
+  width: 300px;
+}
+.display-4 {
+  font-family: monospace;
+}
+.properties {
+  text-align: justify;
+  color: #FFC107;
+  font-size:larger;
+  font-family: monospace;
+}
 
 .background-carousel {
   /*background-image: url("https://img.freepik.com/foto-gratis/fondo-metal-aranazos_1048-5777.jpg?t=st=1714073467~exp=1714077067~hmac=bf2ec0df5b0c5359e2178869223f73d66d0f186d27e6dbb32a335495e2d1d106&w=740");
@@ -133,6 +143,7 @@ a.nav-link{
   color: #FFF;
   width: 100%;
   background-color: #4a465850;
+  padding-top: 10px;
 }
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
@@ -171,7 +182,33 @@ a:link, a:visited, a:active {
     background-color: #1D1E1F;
     color: white;
     z-index: 2;
+    overflow: hidden;
   }
+
+  .card:hover img {
+    /*-webkit-transform:scale(1.3);transform:scale(1.3);
+    box-shadow: 0 10px 10px -10px rgba(219, 181, 12, 0.664);*/
+    opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+  
 
   ul, li {
     list-style:none
@@ -198,4 +235,7 @@ a .dropdown-item {
   font-family: monospace;
 }
 
-
+.social{
+  color: white;
+  font-size: 1.5em;
+}

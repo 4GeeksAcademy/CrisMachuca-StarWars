@@ -34,31 +34,36 @@ export const SingleCharacter = props => {
     };
 
     return (
-        <div className="container bg-light text-center mt-5">
+        <div className="container text-center text-white mt-5 mb-5 p-1 single-card ">
             <div className="jumbotron">
                 <h1 className="display-4">{character.name}</h1>
                 <hr className="my-4" />
-                <div className="image">
+                <div className="d-flex justify-content-evenly pb-3 flex-column flex-md-row">
+                <div className="image ps-3">
                     {characterImage && ( // Verificamos si hay una imagen real cargada
                         <img
                             src={characterImage}
                             alt={character.name}
+                            style={{width:"300px"}}
                         />
                     )}
                 </div>
                 <div>
-                    <h2>Name: {character.name}</h2>
+                    <div className="properties ps-3 mt-2">
                     <p>Height: {character.height}</p>
                     <p>Hair color: {character.hair_color}</p>
                     <p>Eyes color: {character.eye_color}</p>
                     <p>Gender: {character.gender}</p>
                     <p>Birthday: {character.birth_year}</p>
-                </div>
-                <Link to="/">
-                    <span className="btn btn-primary btn-lg mb-5" href="#" role="button">
+                    </div>
+                    <Link to="/">
+                    <span className="btn btn-warning btn-lg mt-5 mb-5" href="#" role="button">
                         Back home
                     </span>
                 </Link>
+                </div>
+                </div>
+                
             </div>
         </div>
     );
