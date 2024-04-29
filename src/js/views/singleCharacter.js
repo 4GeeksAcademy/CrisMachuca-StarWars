@@ -34,7 +34,7 @@ export const SingleCharacter = props => {
     };
 
     return (
-        <div className="container text-center text-white mt-5 mb-5 p-1 single-card ">
+        <div className="container text-center text-white mt-5 mb-5 p-1 single-card">
             <div className="jumbotron">
                 <h1 className="display-4">{character.name}</h1>
                 <hr className="my-4" />
@@ -60,7 +60,7 @@ export const SingleCharacter = props => {
                     <span className="btn btn-warning btn-lg mt-5 mb-5" href="#" role="button">
                         Back home
                     </span>
-                </Link>
+                    </Link>
                 </div>
                 </div>
                 

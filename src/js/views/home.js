@@ -6,6 +6,7 @@ import { Planets } from "../component/planets";
 import { Species } from "../component/species";
 import { Search } from "../component/search";
 import CarouselComponent from "../component/CarouselComponent";
+import BackToTopButton from "../component/indexButon";
 import "../../styles/index.css";
 
 export const Home = () => {
@@ -51,7 +52,7 @@ export const Home = () => {
                 )}
             </div>
             
-            
+         <BackToTopButton/>   
             
         </div>
     );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Characters = (props) => {
-    const {  actions } = useContext(Context);
+    const {  store, actions } = useContext(Context);
     const [iconColor, setIconColor] = useState("white");
     const handleAddToFavorites = () => {
         actions.addToFavorites(props.name); 

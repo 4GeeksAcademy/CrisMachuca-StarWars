@@ -29,10 +29,11 @@ export const SingleNave = props => {
     };
 
     return (
-        <div className="container bg-light text-center mt-5">
+        <div className="container text-center text-white mt-5 mb-5 p-1 single-card">
             <div className="jumbotron">
                 <h1 className="display-4">{starship.name}</h1>
                 <hr className="my-4" />
+                <div className="d-flex justify-content-evenly pb-3 flex-column flex-md-row">
                 <div className="image">
                     {starshipImage && !imageError && ( // Verificamos si hay una imagen real disponible y no hay error
                         <img
@@ -49,17 +50,21 @@ export const SingleNave = props => {
                     )}
                 </div>
                 <div>
-                    <h2>Name: {starship.name}</h2>
+                <div className="properties ps-3 mt-2">
+                    
                     <p>Model: {starship.model}</p>
                     <p>Manufacturer: {starship.manufacturer}</p>
                     <p>Passengers: {starship.passengers}</p>
                 </div>
-                <Link to="/">
-                    <span className="btn btn-primary btn-lg mb-5" href="#" role="button">
+                    <Link to="/">
+                    <span className="btn btn-warning btn-lg mt-5 mb-5" href="#" role="button">
                         Back home
                     </span>
                 </Link>
+                </div>
+                
             </div>
+        </div>
         </div>
     );
 };

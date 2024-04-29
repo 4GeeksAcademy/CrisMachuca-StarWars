@@ -14,6 +14,7 @@ import { Footer } from "./component/footer";
 import { SingleCharacter } from "./views/singleCharacter";
 import { SingleSpecie } from "./views/singleSpecie";
 
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -34,6 +35,7 @@ const Layout = () => {
 						<Route path="/singleSpecie/:specie_id" element={<SingleSpecie />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
+					
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
