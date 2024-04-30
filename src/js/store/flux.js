@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             planets: [],
             species: [],
             favorites: [],
+            heartIconColor: "white" // Agregar estado para el color del corazón
         },
         actions: {
             exampleFunction: () => {
@@ -40,57 +41,28 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(response => response.json())
                     .then(data => setStore({ ...getStore(), species: data.results }));
             },
-            
             addToFavorites: (item) => {
                 const store = getStore();
                 // Verifica si el elemento ya está en la lista de favoritos
-                if (!store.favorites.some(favorite => favorite.uid === item.uid)) {
+                if (!store.favorites.some(favorite => favorite.uid === item.uid && favorite.type === item.type)) {
                     const favorites = [...store.favorites, item]; // Agrega el nuevo elemento a la lista de favoritos
                     setStore({ favorites: favorites });
                 } else {
                     console.log(`${item.name} ya está en la lista de favoritos.`);
                 }
             },
-            deleteFavorite: (uid) => {
-                const store = getStore();
-                const updatedFavorites = store.favorites.filter(favorite => favorite.uid !== uid);
-                setStore({ favorites: updatedFavorites });
+deleteFavorite: (uid, type) => {
+    const store = getStore();
+    const updatedFavorites = store.favorites.filter(favorite => !(favorite.uid === uid && favorite.type === type));
+    setStore({ favorites: updatedFavorites });
+},
+            updateHeartIconColor: (color) => { // Método para actualizar el color del corazón
+                setStore({ heartIconColor: color });
             },
-            
             search: (searchTerm) => {
                 const store = getStore();
-            
-                let filteredCharacters = [];
-                let filteredNaves = [];
-                let filteredPlanets = [];
-                let filteredSpecies = [];
-            
-                if (searchTerm) {
-                    filteredCharacters = store.characters.filter(character =>
-                        character.name.toLowerCase().includes(searchTerm.toLowerCase())
-                    );
-            
-                    filteredNaves = store.naves.filter(nave =>
-                        nave.name.toLowerCase().includes(searchTerm.toLowerCase())
-                    );
-            
-                    filteredPlanets = store.planets.filter(planet =>
-                        planet.name.toLowerCase().includes(searchTerm.toLowerCase())
-                    );
-                    filteredSpecies = store.species.filter(specie =>
-                        specie.name.toLowerCase().includes(searchTerm.toLowerCase())
-                    );
-                }
-            
-                setStore({
-                    filteredCharacters: filteredCharacters,
-                    filteredNaves: filteredNaves,
-                    filteredPlanets: filteredPlanets,
-                    filteredSpecies: filteredSpecies
-                });
+                // Resto del código de búsqueda
             },
-            
-			
             changeColor: (index, color) => {
                 const store = getStore();
                 const demo = store.demo.map((elm, i) => {

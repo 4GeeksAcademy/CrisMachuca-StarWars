@@ -12,9 +12,8 @@ export const Navbar = () => {
         actions.search(event.target.value);
     };
 
-    const handleDeleteFavorite = (index) => {
-        actions.deleteFavorite(index); 
-        setIconColor("white");
+    const handleDeleteFavorite = (uid, type) => {
+        actions.deleteFavorite(uid, type);
     };
 
     return (
@@ -62,7 +61,7 @@ export const Navbar = () => {
                         {store.favorites.map((favorite) => (
     <li key={favorite.uid} className="dropdown-item d-flex align-items-center justify-content-between">
         <Link className="dropdown-item" to={`/${favorite.type}/${favorite.uid}`} style={{fontFamily: "monospace", fontSize:"1.5em"}}>{favorite.name}</Link>
-        <button className="btn btn-link" onClick={() => handleDeleteFavorite(favorite.uid)}><i className="fas fa-trash"></i></button>
+        <button className="btn btn-link" onClick={() => handleDeleteFavorite(favorite.uid, favorite.type)}><i className="fas fa-trash"></i></button>
     </li>
 ))}
 
