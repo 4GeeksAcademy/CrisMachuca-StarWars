@@ -58,8 +58,8 @@ export const Navbar = () => {
                         <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline">Favorites {store.favorites.length}</span>
                         </Link>
                         <ul className={`dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark ${store.favorites.length > 0 ? 'show' : ''}`} style={{ minWidth: "fit-content" }} aria-labelledby="navbarDropdown" >
-                        {store.favorites.map((favorite) => (
-    <li key={favorite.uid} className="dropdown-item d-flex align-items-center justify-content-between">
+                        {store.favorites.map((favorite, index) => (
+    <li key={`${favorite.uid}-${favorite.type}`} className="dropdown-item d-flex align-items-center justify-content-between">
         <Link className="dropdown-item" to={`/${favorite.type}/${favorite.uid}`} style={{fontFamily: "monospace", fontSize:"1.5em"}}>{favorite.name}</Link>
         <button className="btn btn-link" onClick={() => handleDeleteFavorite(favorite.uid, favorite.type)}><i className="fas fa-trash"></i></button>
     </li>
