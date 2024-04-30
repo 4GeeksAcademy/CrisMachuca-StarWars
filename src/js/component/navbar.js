@@ -14,6 +14,7 @@ export const Navbar = () => {
 
     const handleDeleteFavorite = (index) => {
         actions.deleteFavorite(index); 
+        setIconColor("white");
     };
 
     return (
