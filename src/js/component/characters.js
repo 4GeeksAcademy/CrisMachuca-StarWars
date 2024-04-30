@@ -6,9 +6,10 @@ export const Characters = (props) => {
     const {  store, actions } = useContext(Context);
     const [iconColor, setIconColor] = useState("white");
     const handleAddToFavorites = () => {
-        actions.addToFavorites(props.name); 
+        actions.addToFavorites({ ...props, type: 'singleCharacter' }); 
         setIconColor("red");
     };
+    
     return (
 
         <div className="card" style={{width: "18rem"}}>
@@ -17,7 +18,6 @@ export const Characters = (props) => {
             
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5> 
-                <p className="card-text">Character info.</p>
                 <div className="buttons display-flex">
                     <Link className="btn btn-warning m-3 rounded-pill" to={"/singleCharacter/" + props.uid}><span className="more">Learn more!</span></Link>
                     <button className="heart btn" onClick={handleAddToFavorites}><i className="fa-solid fa-heart" style={{color:iconColor}}></i></button>

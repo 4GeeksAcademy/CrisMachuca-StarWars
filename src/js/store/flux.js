@@ -44,18 +44,19 @@ const getState = ({ getStore, getActions, setStore }) => {
             addToFavorites: (item) => {
                 const store = getStore();
                 // Verifica si el elemento ya está en la lista de favoritos
-                if (!store.favorites.includes(item)) {
+                if (!store.favorites.some(favorite => favorite.uid === item.uid)) {
                     const favorites = [...store.favorites, item]; // Agrega el nuevo elemento a la lista de favoritos
                     setStore({ favorites: favorites });
                 } else {
-                    console.log(`${item} ya está en la lista de favoritos.`);
+                    console.log(`${item.name} ya está en la lista de favoritos.`);
                 }
             },
-            deleteFavorite: (index) => {
+            deleteFavorite: (uid) => {
                 const store = getStore();
-                const updatedFavorites = store.favorites.filter((_, idx) => idx !== index); 
+                const updatedFavorites = store.favorites.filter(favorite => favorite.uid !== uid);
                 setStore({ favorites: updatedFavorites });
             },
+            
             search: (searchTerm) => {
                 const store = getStore();
             

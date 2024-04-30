@@ -8,9 +8,13 @@ export const Species = (props) => {
     const [iconColor, setIconColor] = useState("white");
 
     const handleAddToFavorites = () => {
-        actions.addToFavorites(props.name);
+        actions.addToFavorites({ ...props, uid: props.uid, type: 'singleSpecie' }); 
         setIconColor("red");
     };
+    
+    
+   
+    
     const handleImageError = () => {
         setImageError(true); 
     };
@@ -38,7 +42,6 @@ export const Species = (props) => {
     
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
-                <p className="card-text">Species info.</p>
                 <div className="buttons display-flex">
                     <Link className="btn btn-warning m-3 rounded-pill" to={"/singleSpecie/" + props.uid}><span className="more">Learn more!</span></Link>
                     <button className="heart btn" onClick={handleAddToFavorites}><i className="fa-solid fa-heart" style={{color:iconColor}}></i></button>
