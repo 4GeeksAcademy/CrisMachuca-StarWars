@@ -32,7 +32,9 @@ const CarouselComponent = ({ items }) => {
 
     // Calcular el número de tarjetas a mostrar
     let cardsToShow;
-    if (windowWidth >= 1300) {
+    if (windowWidth >= 1600) {
+        cardsToShow = 5;
+    } else if (windowWidth >= 1300) {
         cardsToShow = 4;
     } else if (windowWidth >= 930) {
         cardsToShow = 3;

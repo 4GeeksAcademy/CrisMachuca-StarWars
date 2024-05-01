@@ -40,6 +40,7 @@ export const SingleNave = props => {
                             src={starshipImage}
                             alt={starship.name}
                             onError={() => setImageError(true)} // Si hay un error al cargar la imagen real, establecemos el estado de error
+                            style={{width:"300px"}}
                         />
                     )}
                     {imageError && ( // Mostrar la imagen alternativa solo si hay un error al cargar la imagen real

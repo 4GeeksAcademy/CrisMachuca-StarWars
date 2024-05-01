@@ -12,6 +12,15 @@
   
 }
 
+.logo-container {
+  font-size: 2rem; /* Tamaño predeterminado del logo */
+}
+
+@media (max-width: 576px) {
+  .logo-container {
+      font-size: 0.5rem; /* Tamaño más pequeño del logo para pantallas pequeñas */
+  }
+}
 
 .navbar {
   background-color: transparent;
@@ -39,7 +48,11 @@
   border: 2px solid rgba(255, 255, 255, 0.3); /* Borde blanco */
   transition: transform 0.3s ease; /* Transición suave */
 }
-
+@media (max-width: 576px) {
+  .search-form {
+    max-width: 130px;
+  }
+}
 .search-form:hover {
   transform: translateY(-3px); /* Efecto de levantamiento al hacer hover */
 }
@@ -143,7 +156,7 @@ a.nav-link{
   color: #FFF;
   width: 100%;
   background-color: #4a465850;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {

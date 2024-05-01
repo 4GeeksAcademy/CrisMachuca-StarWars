@@ -61,7 +61,35 @@ deleteFavorite: (uid, type) => {
             },
             search: (searchTerm) => {
                 const store = getStore();
-                // Resto del código de búsqueda
+            
+                let filteredCharacters = [];
+                let filteredNaves = [];
+                let filteredPlanets = [];
+                let filteredSpecies = [];
+            
+                if (searchTerm) {
+                    filteredCharacters = store.characters.filter(character =>
+                        character.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+            
+                    filteredNaves = store.naves.filter(nave =>
+                        nave.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+            
+                    filteredPlanets = store.planets.filter(planet =>
+                        planet.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                    filteredSpecies = store.species.filter(specie =>
+                        specie.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                }
+            
+                setStore({
+                    filteredCharacters: filteredCharacters,
+                    filteredNaves: filteredNaves,
+                    filteredPlanets: filteredPlanets,
+                    filteredSpecies: filteredSpecies
+                });
             },
             changeColor: (index, color) => {
                 const store = getStore();
