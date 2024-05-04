@@ -3,13 +3,10 @@
 */
 @import url('https://fonts.cdnfonts.com/css/star-wars');
 
-
 .layout {
   background-image: url("https://getwallpapers.com/wallpaper/full/a/0/0/30135.jpg");
   background-size: cover; 
   background-attachment: fixed;
-  
-  
 }
 
 .logo-container {
@@ -18,7 +15,7 @@
 
 @media (max-width: 576px) {
   .logo-container {
-      font-size: 0.5rem; /* Tamaño más pequeño del logo para pantallas pequeñas */
+    font-size: 0.8rem; /* Tamaño más pequeño del logo para pantallas pequeñas */
   }
 }
 
@@ -27,9 +24,7 @@
   color: white;
   font-size: 1.5em;
   position: relative;
-  display: flex;
-  justify-content: center;
-  
+  display: block; /* Cambiado de flex a block */
 }
 
 .navbar::after {
@@ -48,20 +43,43 @@
   border: 2px solid rgba(255, 255, 255, 0.3); /* Borde blanco */
   transition: transform 0.3s ease; /* Transición suave */
 }
+
 @media (max-width: 576px) {
   .search-form {
     max-width: 130px;
   }
+  .navbar-collapse {
+    display: flex !important; /* Cambiado de block a flex para mantener los íconos en línea horizontal */
+    justify-content: center; 
+  }
+  
+  .navbar-nav {
+    flex-direction: row; 
+    align-items: center; 
+    display: flex;
+    justify-content: center; 
+    
+  }
+  
+  
+  .nav-item {
+    margin-right: 10px; /* Añade espacio entre los íconos */
+  }
+  
+  .nav-link {
+    padding: 0; /* Elimina el relleno alrededor de los íconos */
+  }
+  
+  .nav-link span {
+    display: none; /* Oculta el texto en pantallas pequeñas */
+  }
 }
-.search-form:hover {
-  transform: translateY(-3px); /* Efecto de levantamiento al hacer hover */
-}
+
+
 
 .dropdown-menu {
   color: rgb(0, 0, 0);
-  
 }
-
 
 .logo {
   font-family: 'Star Wars', sans-serif;
@@ -69,33 +87,48 @@
   line-height: 0.7em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  
 }
+
 .logo:first-child {
   margin-top: 0.1em;
 }
+
 .fa-trash {
   color: #FFC107;
 }
+
 .dropdown-menu {
   position: absolute;
   right: 0;
 }
+
+.fav-text {
+  font-family: monospace;
+  font-size: larger;
+}
+
+h4 {
+  display: inline;
+  background-color: #FFC107;
+  color: black;
+  padding: 0.1em 0.2em;
+  border-radius: 10%;
+}
+
 .nav-item {
   cursor: pointer;
   color: white;
-  
 }
+
 .nav-link:hover {
   color: white;
-  animation: glow .5s infinite alternate;
+  animation: glow 0.5s infinite alternate;
 }
+
 .nav-item:hover .item-glow {
   color: white;
-  animation: glow .5s infinite alternate;
+  animation: glow 0.5s infinite alternate;
 }
-
-
 
 @keyframes glow {
   0% {
@@ -106,8 +139,7 @@
   }
 }
 
-
-a.nav-link{
+a.nav-link {
   color: white;
   font-size: 1.2em;
 }
@@ -116,29 +148,28 @@ a.nav-link{
   border: 6px solid rgb(255, 190, 13);
   box-shadow: 0 0 10px 4px rgba(255, 190, 13, 0.8), 0 0 20px 8px rgba(255, 190, 13, 0.6);
 }
+
 .image {
   width: 300px;
 }
+
 .display-4 {
   font-family: monospace;
 }
+
 .properties {
   text-align: justify;
   color: #FFC107;
-  font-size:larger;
+  font-size: larger;
   font-family: monospace;
 }
 
 .background-carousel {
-  /*background-image: url("https://img.freepik.com/foto-gratis/fondo-metal-aranazos_1048-5777.jpg?t=st=1714073467~exp=1714077067~hmac=bf2ec0df5b0c5359e2178869223f73d66d0f186d27e6dbb32a335495e2d1d106&w=740");
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
-  */
   border: none;
   position: relative;
   overflow: hidden;
 }
+
 .background-carousel::before {
   content: "";
   position: absolute;
@@ -158,95 +189,114 @@ a.nav-link{
   background-color: #4a465850;
   padding-top: 5px;
 }
+
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
-    display: none;
-    
+  display: none;
 }
+
 .more {
   color: black;
 }
+
 h2 {
   font-family: 'Star Wars', sans-serif;
 }
+
 .text-back {
   background-color: #0f151ba6;
 }
 
-a:link, a:visited, a:active {
-  text-decoration:none;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
   color: white;
   font-family: 'Star Wars', sans-serif;
 }
+
 .content-wrapper {
   display: flex;
-  
 }
 
 .scrolling-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .card {
-    width: 286px;
-    display: inline-block;
-    margin-right: 10px; 
-    background-color: #1D1E1F;
-    color: white;
-    z-index: 2;
-    overflow: hidden;
-  }
-
-  .card:hover img {
-    /*-webkit-transform:scale(1.3);transform:scale(1.3);
-    box-shadow: 0 10px 10px -10px rgba(219, 181, 12, 0.664);*/
-    opacity: 1;
-	-webkit-animation: flash 1.5s;
-	animation: flash 1.5s;
+  overflow-x: auto;
+  white-space: nowrap;
 }
+
+.card {
+  width: 286px;
+  display: inline-block;
+  margin-right: 10px; 
+  background-color: #1D1E1F;
+  color: white;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card img{
+  min-height: 300px;
+  object-fit: scale-down;
+  object-position: bottom;
+}
+
+.card:hover img {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+
 @-webkit-keyframes flash {
-	0% {
-		opacity: .4;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@keyframes flash {
-	0% {
-		opacity: .4;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-  
 
-  ul, li {
-    list-style:none
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
+ul,
+li {
+  list-style:none
+}
+
 .fa-heart {
-    font-size: 2em;
-    background-color: transparent;
-    border: 1px, solid yellow;
+  font-size: 2em;
+  background-color: transparent;
+  border: 1px, solid yellow;
 }
+
 a .dropdown-item {
   color: black; 
-  
 }
+
 .dropdown-item {
   font-family: monospace;
 }
+
 .buttons {
   gap: 3em;
 }
+
 .card-group {
   display: flex; 
   justify-Content: center; 
   flex-Wrap: nowrap; 
   overflow-X: auto;
 }
+
 .card-header {
   font-size: x-large;
   font-family: monospace;
@@ -264,7 +314,6 @@ a .dropdown-item {
   z-index: 5;
   transition: opacity 0.3s ease;
 }
-
 
 .visible {
   opacity: 1;
