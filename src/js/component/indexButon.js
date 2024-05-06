@@ -11,8 +11,8 @@ const BackToTopButton = () => {
     }, []);
 
     const handleScroll = () => {
-        // Mostrar el botón cuando el usuario haya hecho scroll más de 400px desde la parte superior
-        if (window.scrollY > 400) {
+        // Mostrar el botón cuando el usuario haya hecho scroll más de 350px desde la parte superior
+        if (window.scrollY > 350) {
             setIsVisible(true);
         } else {
             setIsVisible(false);
@@ -20,7 +20,7 @@ const BackToTopButton = () => {
     };
 
     const scrollToTop = () => {
-        // Desplazar suavemente hacia arriba
+        
         window.scrollTo({
             top: 0,
             behavior: "smooth"

@@ -9,8 +9,21 @@
   background-attachment: fixed;
 }
 
+/*LOGO*/
+
 .logo-container {
   font-size: 2rem; 
+}
+.logo {
+  font-family: 'Star Wars', sans-serif;
+  font-size: 4em;
+  line-height: 0.7em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.logo:first-child {
+  margin-top: 0.1em;
 }
 
 @media (max-width: 576px) {
@@ -18,6 +31,28 @@
     font-size: 0.8rem; 
   }
 }
+
+/*SEARCH*/
+
+.search-form {
+  max-width: 230px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+  border: 2px solid rgba(255, 255, 255, 0.3); 
+  transition: transform 0.3s ease; 
+}
+form {
+  position: relative;
+}
+.fa-magnifying-glass {
+  position: absolute;
+   width: 20px;
+   height: 20px;
+   right: 24px;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+/*NAVBAR*/
 
 .navbar {
   background-color: transparent;
@@ -36,29 +71,13 @@
   height: 1px; 
   background-color: rgba(255, 255, 255, 0.5);
 }
-form {
-  position: relative;
-}
-.fa-magnifying-glass {
-  position: absolute;
-   width: 20px;
-   height: 20px;
-   right: 24px;
-   top: 50%;
-   transform: translateY(-50%);
-}
 
-.search-form {
-  max-width: 230px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Borde blanco */
-  transition: transform 0.3s ease; /* Transición suave */
-}
 
 @media (max-width: 576px) {
   .search-form {
     max-width: 130px;
   }
+  
   .navbar-collapse {
     display: flex !important; /* Cambiado de block a flex para mantener los íconos en línea horizontal */
     justify-content: center; 
@@ -71,7 +90,6 @@ form {
     justify-content: center; 
     
   }
-  
   
   .nav-item {
     margin-right: 10px; 
@@ -86,31 +104,22 @@ form {
   }
 }
 
-
+/*  FAVORITES DROPDOWN */
 
 .dropdown-menu {
   color: rgb(0, 0, 0);
-}
-
-.logo {
-  font-family: 'Star Wars', sans-serif;
-  font-size: 4em;
-  line-height: 0.7em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-
-.logo:first-child {
-  margin-top: 0.1em;
-}
-
-.fa-trash {
-  color: #FFC107;
-}
-
-.dropdown-menu {
   position: absolute;
   right: 0;
+}
+a .dropdown-item {
+  color: black; 
+}
+
+.dropdown-item {
+  font-family: monospace;
+}
+.fa-trash {
+  color: #FFC107;
 }
 
 .fav-text {
@@ -125,6 +134,8 @@ h4 {
   padding: 0.1em 0.2em;
   border-radius: 10%;
 }
+
+/* MENU CATEGORIES */
 
 .nav-item {
   cursor: pointer;
@@ -154,87 +165,7 @@ a.nav-link {
   color: white;
   font-size: 1.2em;
 }
-
-.single-card {
-  border: 6px solid rgb(255, 190, 13);
-  box-shadow: 0 0 10px 4px rgba(255, 190, 13, 0.8), 0 0 20px 8px rgba(255, 190, 13, 0.6);
-}
-
-.image {
-  width: 300px;
-}
-
-.display-4 {
-  font-family: monospace;
-}
-
-.properties {
-  text-align: justify;
-  color: #FFC107;
-  font-size: larger;
-  font-family: monospace;
-}
-
-.background-carousel {
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.background-carousel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(130deg, #509fc9, #e83b59);
-  opacity: 0.3; 
-  z-index: 1;
-}
-
-.carousel-title {
-  font-family: 'Star Wars', sans-serif;
-  color: #FFF;
-  width: 100%;
-  background-color: #4a465850;
-  padding-top: 5px;
-}
-
-.custom-carousel .carousel-control-prev,
-.custom-carousel .carousel-control-next {
-  display: none;
-}
-
-.more {
-  color: black;
-  font-family: 'Star Wars', sans-serif;
-}
-
-h2 {
-  font-family: 'Star Wars', sans-serif;
-}
-
-.text-back {
-  background-color: #0f151ba6;
-}
-
-a:link,
-a:visited,
-a:active {
-  text-decoration: none;
-  color: white;
-  
-}
-
-.content-wrapper {
-  display: flex;
-}
-
-.scrolling-wrapper {
-  overflow-x: auto;
-  white-space: nowrap;
-}
+ /* CARD */
 
 .card {
   width: 286px;
@@ -279,6 +210,79 @@ a:active {
   }
 }
 
+.more {
+  color: black;
+  font-family: 'Star Wars', sans-serif;
+}
+
+/* SINGLE CARD */
+
+.single-card {
+  border: 6px solid rgb(255, 190, 13);
+  box-shadow: 0 0 10px 4px rgba(255, 190, 13, 0.8), 0 0 20px 8px rgba(255, 190, 13, 0.6);
+}
+
+.image {
+  width: 300px;
+}
+
+.display-4 {
+  font-family: monospace;
+}
+
+.properties {
+  text-align: justify;
+  color: #FFC107;
+  font-size: larger;
+  font-family: monospace;
+}
+
+/* CAROUSEL */
+
+.background-carousel {
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-carousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(130deg, #509fc9, #e83b59);
+  opacity: 0.3; 
+  z-index: 1;
+}
+
+.carousel-title {
+  font-family: 'Star Wars', sans-serif;
+  color: #FFF;
+  width: 100%;
+  background-color: #4a465850;
+  padding-top: 5px;
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  display: none;
+}
+
+/* GENERAL */
+
+h2 {
+  font-family: 'Star Wars', sans-serif;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
 ul,
 li {
   list-style:none
@@ -290,58 +294,36 @@ li {
   border: 1px, solid yellow;
 }
 
-a .dropdown-item {
-  color: black; 
-}
-
-.dropdown-item {
-  font-family: monospace;
-}
-
 .buttons {
   gap: 3em;
 }
 
-.card-group {
-  display: flex; 
-  justify-Content: center; 
-  flex-Wrap: nowrap; 
-  overflow-X: auto;
-}
-
-.card-header {
-  font-size: x-large;
-  font-family: monospace;
-}
-/*
-.social{
-  color: white;
-  font-size: 1.5em;
-}*/
+/* SOCIAL */
 
 .fa-brands {
-  color: #fff; /* Color del texto */
+  color: #fff; 
   font-size: 1.5em;
-  text-decoration: none; /* Quita el subrayado predeterminado */
-  transition: box-shadow 0.3s ease; /* Solo animar el efecto de sombra */
+  text-decoration: none; 
+  transition: box-shadow 0.3s ease; 
 }
-
 
 .fa-brands:hover {
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8), 
   0 0 20px 4px rgba(255, 255, 255, 0.6), 
   0 0 30px 6px rgba(255, 255, 255, 0.4), 
-  0 0 40px 8px rgba(255, 255, 255, 0.2), /* Efecto de brillo */
-  0 0 0 0px #ffe81f; /* Borde amarillo */
-border-radius: 10px; /* Borde redondeado */
+  0 0 40px 8px rgba(255, 255, 255, 0.2), 
+  0 0 0 0px #ffe81f; 
+border-radius: 10px; 
 }
 
+/* BACK TO TOP */
 
 .index-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 5;
+  font-weight: bold;
   transition: opacity 0.3s ease;
 }
 

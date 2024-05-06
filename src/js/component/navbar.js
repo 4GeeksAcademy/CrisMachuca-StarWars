@@ -31,9 +31,6 @@ export const Navbar = () => {
                 </div>
             </Link>
             <div className="d-flex align-items-center">
-
-
-
                 <div className="dropdown ms-3 me-3">
                     <Link to="/" className="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
                         <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline fav-text">Favorites <h4>{store.favorites.length}</h4></span>
@@ -58,9 +55,7 @@ export const Navbar = () => {
                     <div className="navsuperior container-fluid d-flex gap-3 align-items-center justify-content-center mb-2">
                         <div className="row">
                             <div className="col-md-12">
-                                
-                                <ul className="navbar-nav d-flex align-items-center">
-                                    
+                                <ul className="navbar-nav d-flex align-items-center">          
                                     <li className="nav-item">
                                         <ScrollLink to="planets" smooth={false} className="nav-link">
                                             <i className="fa-solid fa-earth-americas"></i> <span className="ms-1 d-md-inline item-glow ">Planets</span>
@@ -94,7 +89,6 @@ export const Navbar = () => {
                         />
                         <i className="fa-solid fa-magnifying-glass" style={{color: "black"}}></i>
                     </form>
-                    
                 </div>
                                 </ul>
                             </div>
@@ -104,8 +98,5 @@ export const Navbar = () => {
             </div>
         </nav>
     </div>
-
-
-
     );
 };

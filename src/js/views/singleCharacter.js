@@ -29,7 +29,6 @@ export const SingleCharacter = props => {
             })
             .catch((error) => {
                 console.error('Error fetching character:', error);
-                // No hacemos nada si hay un error al cargar la imagen real
             });
     };
 
