@@ -4,9 +4,9 @@ const BackToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // Agregar un listener para el scroll
+        
         window.addEventListener("scroll", handleScroll);
-        // Eliminar el listener al desmontar el componente
+        
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 

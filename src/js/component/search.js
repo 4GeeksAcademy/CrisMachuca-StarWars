@@ -11,8 +11,8 @@ export const Search = () => {
     return (
         <div className="search-results">
             {store.filteredCharacters && store.filteredCharacters.length > 0 && (
-                <div>
-                    <h2>Characters</h2>
+                <div className="container mb-3">
+                    <h2 className="carousel-title">Characters</h2>
                     <div className="d-flex flex-wrap">
                         {store.filteredCharacters.map(character => (
                             <Characters key={character.uid} uid={character.uid} name={character.name} />
@@ -21,8 +21,8 @@ export const Search = () => {
                 </div>
             )}
             {store.filteredNaves && store.filteredNaves.length > 0 && (
-                <div>
-                    <h2>Naves</h2>
+                <div className="container mb-3">
+                    <h2 className="carousel-title">Naves</h2>
                     <div className="d-flex flex-wrap">
                         {store.filteredNaves.map(nave => (
                             <Naves key={nave.uid} uid={nave.uid} name={nave.name} />
@@ -31,8 +31,8 @@ export const Search = () => {
                 </div>
             )}
             {store.filteredPlanets && store.filteredPlanets.length > 0 && (
-                <div>
-                    <h2>Planets</h2>
+                <div className="container mb-3">
+                    <h2 className="carousel-title">Planets</h2>
                     <div className="d-flex flex-wrap">
                         {store.filteredPlanets.map(planet => (
                             <Planets key={planet.uid} uid={planet.uid} name={planet.name} />
@@ -41,8 +41,8 @@ export const Search = () => {
                 </div>
             )}
             {store.filteredSpecies && store.filteredSpecies.length > 0 && (
-                <div>
-                    <h2>Species</h2>
+                <div className="container mb-3">
+                    <h2 className="carousel-title">Species</h2>
                     <div className="d-flex flex-wrap">
                         {store.filteredSpecies.map(specie => (
                             <Species key={specie.uid} uid={specie.uid} name={specie.name} />

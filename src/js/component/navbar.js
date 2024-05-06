@@ -20,8 +20,8 @@ export const Navbar = () => {
         
         <div>
         <div className="social d-flex gap-3 p-3">
-            <a href="https://github.com/CrisMachuca"><i className="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/cristina-machuca-mart%C3%ADnez-5636b2274/"><i className="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/CrisMachuca" className="star-wars-link"><i className="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/cristina-machuca-mart%C3%ADnez-5636b2274/" className="star-wars-link"><i className="fa-brands fa-linkedin"></i></a>
         </div>
         <div className="d-flex justify-content-around align-items-center">
             <Link to="/">
@@ -31,15 +31,17 @@ export const Navbar = () => {
                 </div>
             </Link>
             <div className="d-flex align-items-center">
-                
+
+
+
                 <div className="dropdown ms-3 me-3">
-                    <Link to="/" type="button" className="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-    <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline fav-text">Favorites <h4>{store.favorites.length}</h4></span>
-</Link>
+                    <Link to="/" className="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
+                        <i className="fa-solid fa-heart"></i> <span className="ms-1 d-none d-sm-inline fav-text">Favorites <h4>{store.favorites.length}</h4></span>
+                    </Link>
                     <ul className={`dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark ${store.favorites.length > 0 ? 'show' : ''}`} style={{ minWidth: "fit-content" }} >
                         {store.favorites.map((favorite, index) => (
                             <li key={`${favorite.uid}-${favorite.type}`} className="dropdown-item d-flex align-items-center justify-content-between">
-                                <Link className="dropdown-item" to={`/${favorite.type}/${favorite.uid}`} style={{fontFamily: "monospace", fontSize:"1.5em"}}>{favorite.name}</Link>
+                                <Link  to={`/${favorite.type}/${favorite.uid}`} style={{fontFamily: "monospace", fontSize:"1.5em"}}>{favorite.name}</Link>
                                 <button className="btn btn-link" onClick={() => handleDeleteFavorite(favorite.uid, favorite.type)}><i className="fas fa-trash"></i></button>
                             </li>
                         ))}
@@ -56,24 +58,26 @@ export const Navbar = () => {
                     <div className="navsuperior container-fluid d-flex gap-3 align-items-center justify-content-center mb-2">
                         <div className="row">
                             <div className="col-md-12">
+                                
                                 <ul className="navbar-nav d-flex align-items-center">
+                                    
                                     <li className="nav-item">
-                                        <ScrollLink to="planets" smooth={true} className="nav-link">
+                                        <ScrollLink to="planets" smooth={false} className="nav-link">
                                             <i className="fa-solid fa-earth-americas"></i> <span className="ms-1 d-md-inline item-glow ">Planets</span>
                                         </ScrollLink>
                                     </li>
                                     <li className="nav-item">
-                                        <ScrollLink to="starships" smooth={true} className="nav-link">
+                                        <ScrollLink to="starships" smooth={false} className="nav-link">
                                             <i className="fa-solid fa-shuttle-space"></i> <span className="ms-1 d-md-inline item-glow ">Starships</span>
                                         </ScrollLink>
                                     </li>
                                     <li className="nav-item">
-                                        <ScrollLink to="characters" smooth={true} className="nav-link">
+                                        <ScrollLink to="characters" smooth={false} className="nav-link">
                                             <i className="fa-solid fa-user-astronaut"></i> <span className="ms-1 d-md-inline item-glow ">Characters</span>
                                         </ScrollLink>
                                     </li>
                                     <li className="nav-item">
-                                        <ScrollLink to="species" smooth={true} className="nav-link">
+                                        <ScrollLink to="species" smooth={false} className="nav-link">
                                             <i className="fa-solid fa-spaghetti-monster-flying"></i><span className="ms-1 d-md-inline item-glow ">Species</span>
                                         </ScrollLink>
                                     </li>
@@ -88,8 +92,9 @@ export const Navbar = () => {
                             onChange={handleSearch}
                             style={{border: "2px solid black"}}
                         />
+                        <i className="fa-solid fa-magnifying-glass" style={{color: "black"}}></i>
                     </form>
-                    <i className="fa-solid fa-magnifying-glass" style={{color: "black"}}></i>
+                    
                 </div>
                                 </ul>
                             </div>

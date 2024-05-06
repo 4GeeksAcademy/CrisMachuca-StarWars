@@ -10,12 +10,12 @@
 }
 
 .logo-container {
-  font-size: 2rem; /* Tamaño predeterminado del logo */
+  font-size: 2rem; 
 }
 
 @media (max-width: 576px) {
   .logo-container {
-    font-size: 0.8rem; /* Tamaño más pequeño del logo para pantallas pequeñas */
+    font-size: 0.8rem; 
   }
 }
 
@@ -24,7 +24,7 @@
   color: white;
   font-size: 1.5em;
   position: relative;
-  display: block; /* Cambiado de flex a block */
+  display: block; 
 }
 
 .navbar::after {
@@ -35,6 +35,17 @@
   width: 100%;
   height: 1px; 
   background-color: rgba(255, 255, 255, 0.5);
+}
+form {
+  position: relative;
+}
+.fa-magnifying-glass {
+  position: absolute;
+   width: 20px;
+   height: 20px;
+   right: 24px;
+   top: 50%;
+   transform: translateY(-50%);
 }
 
 .search-form {
@@ -63,15 +74,15 @@
   
   
   .nav-item {
-    margin-right: 10px; /* Añade espacio entre los íconos */
+    margin-right: 10px; 
   }
   
   .nav-link {
-    padding: 0; /* Elimina el relleno alrededor de los íconos */
+    padding: 0; 
   }
   
   .nav-link span {
-    display: none; /* Oculta el texto en pantallas pequeñas */
+    display: none; 
   }
 }
 
@@ -197,6 +208,7 @@ a.nav-link {
 
 .more {
   color: black;
+  font-family: 'Star Wars', sans-serif;
 }
 
 h2 {
@@ -212,7 +224,7 @@ a:visited,
 a:active {
   text-decoration: none;
   color: white;
-  font-family: 'Star Wars', sans-serif;
+  
 }
 
 .content-wrapper {
@@ -301,11 +313,29 @@ a .dropdown-item {
   font-size: x-large;
   font-family: monospace;
 }
-
+/*
 .social{
   color: white;
   font-size: 1.5em;
+}*/
+
+.fa-brands {
+  color: #fff; /* Color del texto */
+  font-size: 1.5em;
+  text-decoration: none; /* Quita el subrayado predeterminado */
+  transition: box-shadow 0.3s ease; /* Solo animar el efecto de sombra */
 }
+
+
+.fa-brands:hover {
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8), 
+  0 0 20px 4px rgba(255, 255, 255, 0.6), 
+  0 0 30px 6px rgba(255, 255, 255, 0.4), 
+  0 0 40px 8px rgba(255, 255, 255, 0.2), /* Efecto de brillo */
+  0 0 0 0px #ffe81f; /* Borde amarillo */
+border-radius: 10px; /* Borde redondeado */
+}
+
 
 .index-btn {
   position: fixed;
